@@ -4,7 +4,7 @@
 #
 Name     : cppcheck
 Version  : 1.78
-Release  : 7
+Release  : 8
 URL      : https://github.com/danmar/cppcheck/archive/1.78.tar.gz
 Source0  : https://github.com/danmar/cppcheck/archive/1.78.tar.gz
 Summary  : No detailed summary available
