@@ -4,7 +4,7 @@
 #
 Name     : cppcheck
 Version  : 1.83
-Release  : 16
+Release  : 17
 URL      : https://github.com/danmar/cppcheck/archive/1.83.tar.gz
 Source0  : https://github.com/danmar/cppcheck/archive/1.83.tar.gz
 Summary  : No detailed summary available
