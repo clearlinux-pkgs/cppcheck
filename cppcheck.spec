@@ -4,7 +4,7 @@
 #
 Name     : cppcheck
 Version  : 1.87
-Release  : 23
+Release  : 24
 URL      : https://github.com/danmar/cppcheck/archive/1.87.tar.gz
 Source0  : https://github.com/danmar/cppcheck/archive/1.87.tar.gz
 Summary  : A tool for static C/C++ code analysis
