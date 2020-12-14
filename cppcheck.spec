@@ -4,7 +4,7 @@
 #
 Name     : cppcheck
 Version  : 2.2
-Release  : 29
+Release  : 30
 URL      : https://github.com/danmar/cppcheck/archive/2.2/cppcheck-2.2.tar.gz
 Source0  : https://github.com/danmar/cppcheck/archive/2.2/cppcheck-2.2.tar.gz
 Summary  : No detailed summary available
