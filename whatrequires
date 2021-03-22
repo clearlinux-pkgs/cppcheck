@@ -1,6 +1,7 @@
 # This file contains recursive sources that require this package
 dialog
 diffstat
+geany-plugins
 libcmis
 libkcapi
 lynx

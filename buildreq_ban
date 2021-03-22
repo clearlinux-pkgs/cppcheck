@@ -2,3 +2,4 @@
 # undesirable. One entry per line, no whitespace.
 Qt5
 Qt5LinguistTools
+tinyxml2-dev
