@@ -4,7 +4,7 @@
 #
 Name     : cppcheck
 Version  : 2.4.1
-Release  : 34
+Release  : 35
 URL      : https://github.com/danmar/cppcheck/archive/2.4.1/cppcheck-2.4.1.tar.gz
 Source0  : https://github.com/danmar/cppcheck/archive/2.4.1/cppcheck-2.4.1.tar.gz
 Summary  : No detailed summary available
@@ -22,6 +22,7 @@ BuildRequires : buildreq-qmake
 BuildRequires : glibc-dev
 BuildRequires : python3
 BuildRequires : qtbase-dev mesa-dev
+Patch1: 0001-Another-gcc11-fix-3179.patch
 
 %description
 # Cppcheck
@@ -58,13 +59,14 @@ license components for the cppcheck package.
 %prep
 %setup -q -n cppcheck-2.4.1
 cd %{_builddir}/cppcheck-2.4.1
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1616508842
+export SOURCE_DATE_EPOCH=1622173812
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -87,7 +89,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test
 
 %install
-export SOURCE_DATE_EPOCH=1616508842
+export SOURCE_DATE_EPOCH=1622173812
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cppcheck
 cp %{_builddir}/cppcheck-2.4.1/COPYING %{buildroot}/usr/share/package-licenses/cppcheck/8624bcdae55baeef00cd11d5dfcfa60f68710a02
