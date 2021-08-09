@@ -4,7 +4,7 @@
 #
 Name     : cppcheck
 Version  : 2.5
-Release  : 36
+Release  : 37
 URL      : https://github.com/danmar/cppcheck/archive/2.5/cppcheck-2.5.tar.gz
 Source0  : https://github.com/danmar/cppcheck/archive/2.5/cppcheck-2.5.tar.gz
 Summary  : No detailed summary available
@@ -22,7 +22,7 @@ BuildRequires : buildreq-qmake
 BuildRequires : glibc-dev
 BuildRequires : python3
 BuildRequires : qtbase-dev mesa-dev
-Patch1: 0001-Another-gcc11-fix-3179.patch
+Patch1: 0001-Fix-compilation-with-recent-glibc-where-SIGSTKSZ-is-.patch
 
 %description
 # Cppcheck
@@ -66,17 +66,17 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1625581881
+export SOURCE_DATE_EPOCH=1628530053
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %cmake ..
 make  %{?_smp_mflags}
 popd
@@ -89,7 +89,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test
 
 %install
-export SOURCE_DATE_EPOCH=1625581881
+export SOURCE_DATE_EPOCH=1628530053
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cppcheck
 cp %{_builddir}/cppcheck-2.5/COPYING %{buildroot}/usr/share/package-licenses/cppcheck/8624bcdae55baeef00cd11d5dfcfa60f68710a02
