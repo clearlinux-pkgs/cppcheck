@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : cppcheck
-Version  : 2.11.1
-Release  : 58
-URL      : https://github.com/danmar/cppcheck/archive/2.11.1/cppcheck-2.11.1.tar.gz
-Source0  : https://github.com/danmar/cppcheck/archive/2.11.1/cppcheck-2.11.1.tar.gz
+Version  : 2.12.0
+Release  : 59
+URL      : https://github.com/danmar/cppcheck/archive/2.12.0/cppcheck-2.12.0.tar.gz
+Source0  : https://github.com/danmar/cppcheck/archive/2.12.0/cppcheck-2.12.0.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause GPL-3.0 LGPL-3.0 Zlib
@@ -56,15 +56,15 @@ license components for the cppcheck package.
 
 
 %prep
-%setup -q -n cppcheck-2.11.1
-cd %{_builddir}/cppcheck-2.11.1
+%setup -q -n cppcheck-2.12.0
+cd %{_builddir}/cppcheck-2.12.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688053102
+export SOURCE_DATE_EPOCH=1694441655
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -106,7 +106,7 @@ cd ../clr-build-avx2;
 make test || :
 
 %install
-export SOURCE_DATE_EPOCH=1688053102
+export SOURCE_DATE_EPOCH=1694441655
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cppcheck
 cp %{_builddir}/cppcheck-%{version}/COPYING %{buildroot}/usr/share/package-licenses/cppcheck/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -190,6 +190,7 @@ popd
 /usr/share/Cppcheck/cfg/wxsqlite3.cfg
 /usr/share/Cppcheck/cfg/wxsvg.cfg
 /usr/share/Cppcheck/cfg/wxwidgets.cfg
+/usr/share/Cppcheck/cfg/zephyr.cfg
 /usr/share/Cppcheck/cfg/zlib.cfg
 /usr/share/Cppcheck/platforms/aix_ppc64.xml
 /usr/share/Cppcheck/platforms/arm32-wchar_t2.xml
