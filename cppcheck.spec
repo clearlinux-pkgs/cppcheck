@@ -6,10 +6,10 @@
 # autospec commit: c1050fe
 #
 Name     : cppcheck
-Version  : 2.12.1
-Release  : 61
-URL      : https://github.com/danmar/cppcheck/archive/2.12.1/cppcheck-2.12.1.tar.gz
-Source0  : https://github.com/danmar/cppcheck/archive/2.12.1/cppcheck-2.12.1.tar.gz
+Version  : 2.13.0
+Release  : 62
+URL      : https://github.com/danmar/cppcheck/archive/2.13.0/cppcheck-2.13.0.tar.gz
+Source0  : https://github.com/danmar/cppcheck/archive/2.13.0/cppcheck-2.13.0.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause GPL-3.0 LGPL-3.0 Zlib
@@ -26,10 +26,10 @@ BuildRequires : qtbase-dev mesa-dev
 %define debug_package %{nil}
 
 %description
-# Cppcheck
-| Linux ビルド状態 | Windows ビルド状態 | Coverity Scan Build 状態 |
+# **Cppcheck**
+OSS-Fuzz|Coverity Scan Build Status|License|
 |:--:|:--:|:--:|
-| [![Linux ビルド状態](https://img.shields.io/travis/danmar/cppcheck/master.svg?label=Linux%20build)](https://travis-ci.org/danmar/cppcheck) | [![Windows ビルド状態](https://img.shields.io/appveyor/ci/danmar/cppcheck/master.svg?label=Windows%20build)](https://ci.appveyor.com/project/danmar/cppcheck/branch/master) | [![Coverity Scan Build 状態](https://img.shields.io/coverity/scan/512.svg)](https://scan.coverity.com/projects/512) |
+[![OSS-Fuzz](https://oss-fuzz-build-logs.storage.googleapis.com/badges/cppcheck.svg)](https://bugs.chromium.org/p/oss-fuzz/issues/list?sort=-opened&can=1&q=proj:cppcheck)|[![Coverity Scan Build Status](https://img.shields.io/coverity/scan/512.svg)](https://scan.coverity.com/projects/512)|[![License](https://img.shields.io/badge/license-GPL3.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 
 %package bin
 Summary: bin components for the cppcheck package.
@@ -58,15 +58,15 @@ license components for the cppcheck package.
 
 
 %prep
-%setup -q -n cppcheck-2.12.1
-cd %{_builddir}/cppcheck-2.12.1
+%setup -q -n cppcheck-2.13.0
+cd %{_builddir}/cppcheck-2.13.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1701945980
+export SOURCE_DATE_EPOCH=1703605780
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -134,7 +134,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1701945980
+export SOURCE_DATE_EPOCH=1703605780
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cppcheck
 cp %{_builddir}/cppcheck-%{version}/COPYING %{buildroot}/usr/share/package-licenses/cppcheck/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
@@ -178,7 +178,6 @@ popd
 /usr/share/Cppcheck/cfg/cairo.cfg
 /usr/share/Cppcheck/cfg/cppcheck-lib.cfg
 /usr/share/Cppcheck/cfg/cppunit.cfg
-/usr/share/Cppcheck/cfg/daca.cfg
 /usr/share/Cppcheck/cfg/dpdk.cfg
 /usr/share/Cppcheck/cfg/embedded_sql.cfg
 /usr/share/Cppcheck/cfg/emscripten.cfg
