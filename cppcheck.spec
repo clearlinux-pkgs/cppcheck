@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : cppcheck
-Version  : 2.14.0
-Release  : 68
-URL      : https://github.com/danmar/cppcheck/archive/2.14.0/cppcheck-2.14.0.tar.gz
-Source0  : https://github.com/danmar/cppcheck/archive/2.14.0/cppcheck-2.14.0.tar.gz
+Version  : 2.14.1
+Release  : 69
+URL      : https://github.com/danmar/cppcheck/archive/2.14.1/cppcheck-2.14.1.tar.gz
+Source0  : https://github.com/danmar/cppcheck/archive/2.14.1/cppcheck-2.14.1.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause GPL-3.0 Zlib
@@ -58,15 +58,15 @@ license components for the cppcheck package.
 
 
 %prep
-%setup -q -n cppcheck-2.14.0
-cd %{_builddir}/cppcheck-2.14.0
+%setup -q -n cppcheck-2.14.1
+cd %{_builddir}/cppcheck-2.14.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713662286
+export SOURCE_DATE_EPOCH=1716830158
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -136,7 +136,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1713662286
+export SOURCE_DATE_EPOCH=1716830158
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cppcheck
 cp %{_builddir}/cppcheck-%{version}/COPYING %{buildroot}/usr/share/package-licenses/cppcheck/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
