@@ -7,7 +7,7 @@
 #
 Name     : cppcheck
 Version  : 2.16.0
-Release  : 72
+Release  : 73
 URL      : https://github.com/danmar/cppcheck/archive/2.16.0/cppcheck-2.16.0.tar.gz
 Source0  : https://github.com/danmar/cppcheck/archive/2.16.0/cppcheck-2.16.0.tar.gz
 Summary  : No detailed summary available
